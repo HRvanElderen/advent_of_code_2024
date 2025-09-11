@@ -31,6 +31,7 @@ def part_1(input):
             total += update[middle]
     return total
 
+
 def check_update(rules, update):
     rule_broken = False
     for rule in rules:
@@ -39,6 +40,7 @@ def check_update(rules, update):
                 rule_broken = True
                 break
     return rule_broken
+
 
 def part_2(input):
     rules, updates = read_input(input)
@@ -50,6 +52,7 @@ def part_2(input):
    
     correct_order = []
 
+    # reorder incorrect updates by swapping where rule is broken
     for update in incorrect:
         while check_update(rules, update):
             for rule in rules:
